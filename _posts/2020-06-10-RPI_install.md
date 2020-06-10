@@ -6,13 +6,18 @@
 {:toc}
 
 ## 镜像烧录
-这次重装系统的原因是这样子的：原有的Ubuntu mate系统在安装中文输入法时突然崩溃死机，强制断电重启后一直出现如下图的错误
+这次重装系统的原因是这样子的：原有的Ubuntu mate系统在安装中文输入法时突然崩溃死机，强制断电重启后一直出现如下图的错误。![报错](https://raw.githubusercontent.com/acacxhm7/pictureHub/master/RPI_start_error.jpg "报错")
 
 `[    2.551834]Error: “driver ‘sdhost-bcm2835’ already registered, aborting…`
 
 通过多方查阅[报错信息](https://ubuntu-mate.community/t/raspberry-pi-3-model-b-plus-ubuntu-mate-installation-error-driver-sdhost-bcm2835-already-registered-aborting/19300)和询问，考虑到系统内并无重要文件，决定重装系统（前天上午因为无法连接到显示器已经重装过一次了呜呜呜）
 
 这次烧录的是Ubuntu mate18.04镜像，镜像可以从官网上下载，这里我直接用同学提供的。
+
+首先需要格式化SD卡。这里我选择使用DiskGenius工具。具体选项如下图：
+
+如果格式化时发生`错误5:拒绝访问`，可以参照此处[知乎](https://www.zhihu.com/question/268567807)上的回答。
+
 ## 更换国内的apt源
 
 Ubuntu默认的apt源位于英国，用它来安装软件包奇慢无比，因此我们有必要把它换成国内的源。在换源之前，首先安装vim。vim是一款功能强大的文本编辑器，我们安装vim后能够方便的对文件进行修改。关于vim的使用教程以及常见操作，可以戳[b站教程](https://www.bilibili.com/video/BV1Yt411X7mu)和[树莓派实验室](https://shumeipai.nxez.com/2013/12/26/linux-on-vim-editor-tutorials.html)。
@@ -54,3 +59,9 @@ Ctrl+shift+T打开终端，以管理员身份输入以下命令打开sources.lis
 安装完毕后可以输入以下命令查看Python的版本。
 
 `python3.7 -V`
+### python IDLE的安装
+python的IDE有很多，我个人比较习惯使用官方提供的python IDLE。安装python3的IDLE只需要在终端执行以下命令：
+
+`sudo apt-get update`
+
+`sudo apt-get install idle3`
