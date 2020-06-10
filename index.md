@@ -1,4 +1,4 @@
-Hello and welcome to this blog. Edit the `index.md` file to change this content. All pages on the blog, including this one, use [Markdown](https://guides.github.com/features/mastering-markdown/). You can include images:
+欢迎大家来到acacxhm7的博客，在这里我将分享我在学习中碰到的不错的资料，以及一些个人的项目。
 
 ![Image of fast.ai logo](images/logo.png)
 
