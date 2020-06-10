@@ -16,14 +16,20 @@
 
 首先需要格式化SD卡。这里我选择使用DiskGenius工具。具体选项如下图：
 
+![格式化选项](https://raw.githubusercontent.com/acacxhm7/pictureHub/master/%E6%B7%98%E5%AE%9D%E5%9B%BE%E7%89%87.jpg "格式化选项")
+
 如果格式化时发生`错误5:拒绝访问`，可以参照此处[知乎](https://www.zhihu.com/question/268567807)上的回答。
+![处理方案](https://raw.githubusercontent.com/acacxhm7/pictureHub/master/diskpart.png "处理方案")
+
 
 ## 更换国内的apt源
 
-Ubuntu默认的apt源位于英国，用它来安装软件包奇慢无比，因此我们有必要把它换成国内的源。在换源之前，首先安装vim。vim是一款功能强大的文本编辑器，我们安装vim后能够方便的对文件进行修改。关于vim的使用教程以及常见操作，可以戳[b站教程](https://www.bilibili.com/video/BV1Yt411X7mu)和[树莓派实验室](https://shumeipai.nxez.com/2013/12/26/linux-on-vim-editor-tutorials.html)。
+Ubuntu默认的apt源位于英国，用它来安装软件包奇慢无比，因此我们有必要把它换成国内的源。在换源之前，首先安装vim。vim是一款功能强大的文本编辑器，我们安装vim后能够方便的对文件进行修改。关于vim的使用教程以及常见操作，可以戳[b站教程](https://www.bilibili.com/video/BV1Yt411X7mu)和[树莓派实验室](https://shumeipai.nxez.com/2013/12/26/linux-on-vim-editor-tutorials.html)。Ctrl+shift+T打开终端，以管理员身份输入以下命令：
+
+`sudo apt-get install vim`
 
 国内的apt源有很多，如阿里、清华、中科大的……此处我将选取中科大的镜像源。
-Ctrl+shift+T打开终端，以管理员身份输入以下命令打开sources.list文件（此文件极其重要，切勿随意更改！）
+先打开sources.list文件（此文件极其重要，切勿随意更改！）:
 
 `sudo vim /etc/apt/sources.list`
 
@@ -59,9 +65,22 @@ Ctrl+shift+T打开终端，以管理员身份输入以下命令打开sources.lis
 安装完毕后可以输入以下命令查看Python的版本。
 
 `python3.7 -V`
+### 默认启动python3和安装pip
+树莓派原先默认启动的是python2，在这里我们把它改成python3：
+
+`sudo rm -r /usr/bin/python`
+
+`sudo ln -s /usr/bin/python3 /usr/bin/python`
+
+pip是一个安装第三方python库的工具，安装pip的命令是：
+
+`sudo apt-get install python3-pip`
 ### python IDLE的安装
 python的IDE有很多，我个人比较习惯使用官方提供的python IDLE。安装python3的IDLE只需要在终端执行以下命令：
 
 `sudo apt-get update`
 
 `sudo apt-get install idle3`
+
+## 结语
+树莓派的安装虽然简单，但若被种种小问题困扰，也是一件令人头疼的事情。完成安装之后便可以尽情探索树莓派的世界了[起飞~]
