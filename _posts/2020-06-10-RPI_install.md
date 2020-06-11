@@ -1,4 +1,4 @@
-# **树莓派的镜像烧录及相关配置**
+# **树莓派Ubuntu18.04镜像烧录及相关配置**
 
 为了在树莓派上运行opencv，本文将从头开始介绍树莓派镜像文件的烧录，以及相关环境的配置。目前网上的资料参差不齐，在这里我将对我搜集到的相关资料进行重新的整理和归纳。
 
@@ -12,7 +12,9 @@
 
 通过多方查阅[报错信息](https://ubuntu-mate.community/t/raspberry-pi-3-model-b-plus-ubuntu-mate-installation-error-driver-sdhost-bcm2835-already-registered-aborting/19300)和询问，考虑到系统内并无重要文件，决定重装系统（前天上午因为无法连接到显示器已经重装过一次了呜呜呜）
 
-这次烧录的是Ubuntu mate18.04镜像，镜像可以从官网上下载，这里我直接用同学提供的。
+这次烧录的是Ubuntu mate18.04镜像，镜像可以从[官网](https://ubuntu-mate.org/download/i386/bionic/thanks/?method=direct)上下载，这里我直接用同学提供的。下载链接如下图：
+
+![链接](这里待替换！！！ "点击此链接")
 
 首先需要格式化SD卡。这里我选择使用DiskGenius工具。具体选项如下图：
 
@@ -81,6 +83,14 @@ python的IDE有很多，我个人比较习惯使用官方提供的python IDLE。
 `sudo apt-get update`
 
 `sudo apt-get install idle3`
+
+## 中文输入法的安装
+
+树莓派实质上是一台计算机，在使用的过程中我们经常要进行中文的输入。此处推荐使用scim中文输入法。
+
+安装字体库`sudo apt-get install ttf-wqy-zenhei`
+
+安装拼音输入法`sudo apt-get install scim-pinyin`，重启之后即可使用，Ctrl+空格切换中英文。
 
 ## 结语
 树莓派的安装虽然简单，但若被种种小问题困扰，也是一件令人头疼的事情。完成安装之后便可以尽情探索树莓派的世界了[起飞~]
