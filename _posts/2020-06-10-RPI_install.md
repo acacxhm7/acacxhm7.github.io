@@ -23,6 +23,10 @@
 如果格式化时发生`错误5:拒绝访问`，可以参照此处[知乎](https://www.zhihu.com/question/268567807)上的回答。
 ![处理方案](https://raw.githubusercontent.com/acacxhm7/pictureHub/master/diskpart.png "处理方案")
 
+之后，我们采用Win32DiskImager烧录，按照图示步骤，先选择SD卡的设备，再在映像文件中选择.img结尾的镜像文件。再点击“写入”即可。
+
+![写入镜像](https://upload-images.jianshu.io/upload_images/1578283-c9658b1096089c9e.png?imageMogr2/auto-orient/strip|imageView2/2/w/429/format/webp "烧写镜像（网图）")
+
 
 ## 更换国内的apt源
 
